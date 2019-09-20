@@ -8,11 +8,12 @@ import javafx.scene.control.TextField;
 
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class CalculatorController implements Initializable {
     double data =0;
     Operation op;
+    List<Button> buttonList = new ArrayList<Button>();
     @FXML
     private TextField display;
 
@@ -87,10 +88,36 @@ public class CalculatorController implements Initializable {
         }
     }
 
-
+    @FXML
+    private void enableClear(ActionEvent event){
+        clear.setDisable(false);
+    }
+    @FXML
+    private void disableClear(ActionEvent event){
+        clear.setDisable(true);
+    }
+    @FXML
+    private void applyDarkStyle(ActionEvent event){
+        clear.setDisable(false);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         display.setEditable(false);
+        buttonList.add(zero);
+        buttonList.add(one);
+        buttonList.add(two);
+        buttonList.add(three);
+        buttonList.add(four);
+        buttonList.add(five);
+        buttonList.add(six);
+        buttonList.add(seven);
+        buttonList.add(eighth);
+        buttonList.add(nine);
+        buttonList.add(mult);
+        buttonList.add(div);
+        buttonList.add(isgelijk);
+        buttonList.add(minus);
+        buttonList.add(plus);
 
     }
     enum Operation{
