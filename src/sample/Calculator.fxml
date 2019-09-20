@@ -47,18 +47,19 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Button Style">
             <items>
-              <MenuItem mnemonicParsing="false" text="Dark" />
-                  <MenuItem mnemonicParsing="false" text="Light" />
+              <MenuItem mnemonicParsing="false" onAction="#applyDarkStyle" text="Dark" />
+                  <MenuItem mnemonicParsing="false" onAction="#applyLightStyle" text="Light" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Clear Button">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#disableClear" text="Disable" />
+              <MenuItem mnemonicParsing="false" onAction="#enableClear" text="Enable" />
             </items>
           </Menu>
         </menus>

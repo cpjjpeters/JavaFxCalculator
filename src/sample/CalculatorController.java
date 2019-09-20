@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -98,7 +99,27 @@ public class CalculatorController implements Initializable {
     }
     @FXML
     private void applyDarkStyle(ActionEvent event){
-        clear.setDisable(false);
+       for (Button button : buttonList){
+           button.setStyle("-fx-background-color:black;"
+           + "-fx-text-fill:white;"
+           + "-fx-border-width:2;"
+               + "-fx-border-color:white;"
+           );
+       }
+    }
+    @FXML
+    private void applyLightStyle(ActionEvent event){
+        for (Button button : buttonList){
+            button.setStyle("-fx-background-color:white;"
+                    + "-fx-text-fill:black;"
+                    + "-fx-border-width:2;"
+                    + "-fx-border-color:black;"
+            );
+        }
+    }
+    @FXML
+    private void closeAction(ActionEvent event){
+        Platform.exit();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
